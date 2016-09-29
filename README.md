@@ -24,12 +24,13 @@ This web application provides the following functions:
 ### Modify History
 
  - Set`Web` as `Basketball_Team`’s attribute instead of an entity
- - Remove `Constitutes` relationship between `Player` and `Basketball_Team`
+ - Remove `Constitutes` relationship between `Player` and `Basketball_Team`, add `PlayerID` as `Player`'s primary key
  - Switch `Payment` from the attribute of `Manager` to the attribute of the `Runs` relationship. For entity `Manager`, add one more attribute `ManagerID` and set it as the only primary key
  - Add `CompanyID` attribute of entity `Company`, and set it as the only primary key; remove attribute `Board`
  - Remove attribute `Searchlist` of relationship `Searches` between `User` and `BasketBall_Team`, add `Searchtime`
  - Reset relationship `Comments` to entity, link it to `User` and `Game` through relationship `Writes` and `About`. Now the attributes of `Comments` are primary key `CommentID`, `CommentTime`, `Rate` and `Content`
  - Reset attribute `Score` of entity `Game` to attribute of relationship `Plays`. Rephrase attribute `GameNumber` of entity `Game` to `GameID`
+ - Remove attribute `Season` of entity `Championship`, redesign attribute `Coach` of entity `Basketball_Team`
 
 
 
