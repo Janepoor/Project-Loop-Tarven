@@ -1,8 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>Search history</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('http://wallpapercave.com/wp/WFTMul0.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    
+  </div>
+
+    <h1 class="w3-jumbo w3-animate-top">Search info of {{uname}}</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
 
 
-<h1> This is your search info  {{uname}}</h1>
     {% for n in data %}
-    <p>username:{{n[0]}}</p>
-    <p>searchtime:{{n[1]}}</p>
-    <p>teamname: {{n[2]}}</p>
+   <p class="w3-large w3-center">username:{{n[0]}}</p>
+   <p class="w3-large w3-center">searchtime:{{n[1]}}</p>
+    <p class="w3-large w3-center">teamname: {{n[2]}}</p>
     {% endfor %}
+
+
+
+ 
+  </div>
+
+
+</body>
+</html>
+
+

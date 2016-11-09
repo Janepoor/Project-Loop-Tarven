@@ -1,10 +1,33 @@
-<div class="container container-body">
-  <h1>General Search</h1>
+<!DOCTYPE html>
+<html>
+<title>General Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('http://wallpapercave.com/wp/WFTMul0.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
 
-  <hr>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">General Search</h1>
+     <p class="w3-large w3-center">Available Teams Show Below</p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+   
 
   <form method="GET" action="/teamdisplay">
-  	<h4>Search by team: </h4>
+    
     <select name ="query">
 
       {% for b in Basketball_Team_runned %}
@@ -13,3 +36,22 @@
     </select>
         <!-- <input type="text" name="query" required> --> <input type="submit" value="Search" class="btn btn-primary">
   </form>
+
+</div>
+
+ 
+
+  <div class="w3-display-bottomleft w3-padding-large w3-text-white">
+    Powered by <a>Yulong Qiao & Jianpu Ma</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+

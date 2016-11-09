@@ -1,14 +1,59 @@
-{{message}}
-<h1> please update your comment. </h1>
-<h1>Please note that we have specific requirements for each attribute.</h1>
- <form method="POST" action="/update_comment_check">
-      <label for="content">Input new content:</label>
-      <input type="text" id="content" name="content"> <br>
 
-      <label for="rate">Input rate for the game: a integer from 1 to 10 </label>
-      <input type="text" id= "rate" name = "rate" ><br>
+<!DOCTYPE html>
+<html>
+<title>Comment Update</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('http://wallpapersinsider.com/wp-content/uploads/2016/04/Michael-Jordan-NBA-Wallpapers.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
 
-      <input type="hidden" id="uid", name="uid" value="{{uid}}">
-      <input type="hidden" id="commentid", name="commentid" value="{{commentid}}">
-      <input type="submit" value="submit">
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    
+  </div>
+
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">Update Comment</h1>
+     <p class="w3-large w3-center">(specific requirements needed for each attribute)</p>
+     <p class="w3-large w3-center">{{message}}</p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+
+<p class="w3-large w3-center">
+<form method="POST" action="/commentcheck">
+      <p class="w3-large w3-center"><label for="content">New Content</label></p>
+      <p class="w3-large w3-center"><input type="text" id="content" name="content" placeholder="Comment content"> <br></p>
+
+     <p class="w3-large w3-center"> <label for="rate">New Rating</label></p>
+      <p class="w3-large w3-center"><input type="text" id= "rate" name = "rate" placeholder="Rating form 1 to 10" ><br></p>
+
+     
+      <p class="w3-large w3-center"><input type="hidden" id="uid", name="uid" value="{{uid}}"></p>
+      <p class="w3-large w3-center"><input type="hidden" id="commentid", name="commentid" value="{{commentid}}"></p>
+      <p class="w3-large w3-center"><input type="submit" value="submit"></p>
 </form>
+</p>
+
+
+</div>
+ <div class="w3-display-bottomleft w3-padding-large w3-text-white">
+    Powered by <a>Yulong Qiao & Jianpu Ma</a>
+  </div>
+ 
+    </div>
+    <div>
+   
+</body>
+</html>
+
+

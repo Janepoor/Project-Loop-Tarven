@@ -1,164 +1,265 @@
-{% include "header.html" %}
-<div class="container container-body">
 
-	<!-- Politician search query result -->
-	<div>
+<!DOCTYPE html>
+<html>
+<title>Search results</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://www.walldevil.com/wallpapers/a75/wallpaper-background-black-basketball-basket-ball-sport-backgrounds-desktop-wallpapers.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    
+  </div>
+       {% include "header.html" %}
+
+   
+    <p class="w3-large w3-center">
+    <div>
 		{% if (politician_data is defined) and (politician_data | length > 0) %}
+		    <h1 class="w3-jumbo w3-animate-top">Information for {{n.name}} </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
 			{% for n in politician_data %}
-				<h2> Information for {{n.name}}</h2>
-		  		<div>Name: {{ n.name }}</div>
-		  		<div>Date of Birth (Year Month Day): {{ n.dob }}</div>
-		  		<div>Net worth: ${{ n.net_worth }}</div>
-		  		<div>Incumbent: {{ n.incumbent_status }}</div>
-		  		<div>Party Affiliation: {{ n.party_affiliation }}</div>
-		  		<div>Years in Office: {{ n.years_in_office }}</div>
+		  		<div><p class="w3-large w3-center">Name: {{ n.name }}</div></p>
+		  		<div><p class="w3-large w3-center">Date of Birth (Year Month Day): {{ n.dob }}</div></p>
+		  		<div><p class="w3-large w3-center">Net worth: ${{ n.net_worth }}</div></p>
+		  		<div><p class="w3-large w3-center">Incumbent: {{ n.incumbent_status }}</div></p>
+		  		<div><p class="w3-large w3-center">Party Affiliation: {{ n.party_affiliation }}</div></p>
+		  		<div><p class="w3-large w3-center">Years in Office: {{ n.years_in_office }}</div></p>
 		  	{% endfor %}
 		{% endif %}
 
 		{% if (politician_data is defined) and (politician_data | length == 0) %}
-			<h2>No results</h2>
+			<h2 class="w3-large w3-center">No results</h2>
 		{% endif %}
 	</div>
+
+   </p>
+
+
 
 	<!-- Senators search query result -->
 	<div>
 		{% if (senators_data is defined) and (senators_data | length > 0) %}
+
+    <h1 class="w3-jumbo w3-animate-top">Information for Senator </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
 			{% for n in senators_data %}
-				<h2> Information for Senator {{n.name}}</h2>
-		  		<div>Name: {{ n.name }}</div>
-		  		<div>Date of Birth (Year Month Day): {{ n.dob }}</div>
-		  		<div>Net worth: ${{ n.net_worth }}</div>
-		  		<div>Incumbent: {{ n.incumbent_status }}</div>
-		  		<div>Party Affiliation: {{ n.party_affiliation }}</div>
-		  		<div>Years in Office: {{ n.years_in_office }}</div>
+		  		<div><p class="w3-large w3-center">Name: {{ n.name }}</div></p>
+		  		<div><p class="w3-large w3-center">Date of Birth (Year Month Day): {{ n.dob }}</div></p>
+		  		<div><p class="w3-large w3-center">Net worth: ${{ n.net_worth }}</div></p>
+		  		<div><p class="w3-large w3-center">Incumbent: {{ n.incumbent_status }}</div></p>
+		  		<div><p class="w3-large w3-center">Party Affiliation: {{ n.party_affiliation }}</div></p>
+		  		<div><p class="w3-large w3-center">Years in Office: {{ n.years_in_office }}</div></p>
 		  	{% endfor %}
 		{% endif %}
 
 		{% if (senators_data is defined) and (senators_data | length == 0) %}
-			<h2>No results</h2>
+			<h2 class="w3-large w3-center">No results</h2>
 		{% endif %}
 	</div>
 
-	<!-- Represenatative search query result -->
-	<div>
+
+    	<div>
 		{% if (reps_data is defined) and (reps_data | length > 0) %}
+	<h1 class="w3-jumbo w3-animate-top">Information for Representative  </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
 			{% for n in reps_data %}
-				<h2> Information for Representative {{n.name}}</h2>
-		  		<div>Name: {{ n.name }}</div>
-		  		<div>Date of Birth (Year Month Day): {{ n.dob }}</div>
-		  		<div>Net worth: ${{ n.net_worth }}</div>
-		  		<div>Incumbent: {{ n.incumbent_status }}</div>
-		  		<div>Party Affiliation: {{ n.party_affiliation }}</div>
-		  		<div>Years in Office: {{ n.years_in_office }}</div>
+				
+		  		<div><p class="w3-large w3-center">Name: {{ n.name }}</div></p>
+		  		<div><p class="w3-large w3-center">Date of Birth (Year Month Day): {{ n.dob }}</div></p>
+		  		<div><p class="w3-large w3-center">Net worth: ${{ n.net_worth }}</div></p>
+		  		<div><p class="w3-large w3-center">Incumbent: {{ n.incumbent_status }}</div></p>
+		  		<div><p class="w3-large w3-center">Party Affiliation: {{ n.party_affiliation }}</div></p>
+		  		<div><p class="w3-large w3-center">Years in Office: {{ n.years_in_office }}</div></p>
 		  	{% endfor %}
 		{% endif %}
 
 		{% if (reps_data is defined) and (reps_data | length == 0) %}
-			<h2>No results</h2>
+			<p class="w3-large w3-center"><h2>No results</h2></p>
 		{% endif %}
 	</div>
+
 
 	<!-- Rep state search by state query result -->
 	<div>
 
 		{% if (state_data is defined) and (state_data | length > 0) %}
-			{% for n in state_data %}
-			<h2>State information for: {{ n.state_name }}</h2>
+		   <h1 class="w3-jumbo w3-animate-top">State information for: {{ n.state_name }}  </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
 
-		  		<div>State Name: {{ n.state_name }}</div>
-		  		<div>Population: {{ n.population }}</div>
-		  		<div>Major Ethnicity: {{ n.major_ethnicity }}</div>
-		  		<div>Median Age: {{ n.median_age }}</div>
-		  		<div>Major Party: {{ n.major_party }}</div>
-		  		<div>Median Income: ${{ n.median_income }}</div>
-		  		<div>Poverty Level: {{ n.poverty_level }}%</div>
-		  		<div>Senior Senator: {{ n.sr_senator_name }}</div>
-		  		<div>Junior Senator: {{ n.jr_senator_name }}</div>
+			{% for n in state_data %}
+
+		  		<div><p class="w3-large w3-center">State Name: {{ n.state_name }}</div></p>
+		  		<div><p class="w3-large w3-center">Population: {{ n.population }}</div></p>
+		  		<div><p class="w3-large w3-center">Major Ethnicity: {{ n.major_ethnicity }}</div></p>
+		  		<div><p class="w3-large w3-center">Median Age: {{ n.median_age }}</div></p>
+		  		<div><p class="w3-large w3-center">Major Party: {{ n.major_party }}</div></p>
+		  		<div><p class="w3-large w3-center">Median Income: ${{ n.median_income }}</div></p>
+		  		<div><p class="w3-large w3-center">Poverty Level: {{ n.poverty_level }}%</div></p>
+		  		<div><p class="w3-large w3-center">Senior Senator: {{ n.sr_senator_name }}</div></p>
+		  		<div><p class="w3-large w3-center">Junior Senator: {{ n.jr_senator_name }}</div></p>
 		  	{% endfor %}
 		{% endif %}
 	</div>
 
 	<div>
 		{% if (rep_data is defined) and (rep_data | length == 0) and (state_data is defined) and (state_data | length == 0) %}
-			<h2>No results</h2>
+			<p class="w3-large w3-center"><h2>No results</h2></p>
 		{% endif %}
 	</div>
+
+
+
+
 
 	<!-- rep dist search by state query result -->
 	<div>
 
 		{% if rep_data is defined %}
-			{% for n in rep_data %}
-			<h2>Information for: {{ n.state_name }} District {{ n.district_number }} </h2>
 
-		  		<div>State Name: {{ n.state_name }}</div>
-		  		<div>District Number: {{ n.district_number }}</div>
-		  		<div>Population: {{ n.population }}</div>
-		  		<div>Major Ethnicity: {{ n.major_ethnicity }}</div>
-		  		<div>Median Age: {{ n.median_age }}</div>
-		  		<div>Major Party: {{ n.major_party }}</div>
-		  		<div>Median Income: ${{ n.median_income }}</div>
-		  		<div>Poverty Level: {{ n.poverty_level }}%</div>
-		  		<div>Representative: {{ n.representative_name }}</div>
+	<h1 class="w3-jumbo w3-animate-top">Information for: {{ n.state_name }} District {{ n.district_number }} </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
+			{% for n in rep_data %}
+		  		<div><p class="w3-large w3-center">State Name: {{ n.state_name }}</p></div>
+		  		<div><p class="w3-large w3-center">District Number: {{ n.district_number }}</p></div>
+		  		<div><p class="w3-large w3-center">Population: {{ n.population }}</p></div>
+		  		<div><p class="w3-large w3-center">Major Ethnicity: {{ n.major_ethnicity }}</p></div>
+		  		<div><p class="w3-large w3-center">Median Age: {{ n.median_age }}</p></div>
+		  		<div><p class="w3-large w3-center">Major Party: {{ n.major_party }}</p></div>
+		  		<div><p class="w3-large w3-center">Median Income: ${{ n.median_income }}</p></div>
+		  		<div><p class="w3-large w3-center">Poverty Level: {{ n.poverty_level }}%</p></div>
+		  		<div><p class="w3-large w3-center">Representative: {{ n.representative_name }}</p></div>
 		  	{% endfor %}
 		{% endif %}
 	</div>
+
+
+
+
 
 	<!-- PAC search by name -->
 	<div>
 		{% if (pac_data is defined) and (pac_data | length == 0) %}
-			<h2>No results</h2>
+			<p class="w3-large w3-center"><h2>No results</h2></p>
 		{% endif %}
 
+
 		{% if pac_data is defined %}
+
+	<h1 class="w3-jumbo w3-animate-top">PAC Information for: {{ n.name}}< </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
 			{% for n in pac_data %}
-			<h2>PAC Information for: {{ n.name}}</h2>
-		  		<div>Committee ID: {{ n.committee_id }}</div>
-		  		<div>Name: {{ n.name }}</div>
-		  		<div>Budget: ${{ n.budget }}</div>
-		  		<div>Cash Spent: ${{ n.cash_spent }}</div>
-		  		<div>Cash on Hand: ${{ n.cash_on_hand }}</div>
-		  		<div>Registrant: {{ n.registrant }}</div>
+		  		<div><p class="w3-large w3-center">Committee ID: {{ n.committee_id }}</p></div>
+		  		<div><p class="w3-large w3-center">Name: {{ n.name }}</p></div>
+		  		<div><p class="w3-large w3-center">Budget: ${{ n.budget }}</p></div>
+		  		<div><p class="w3-large w3-center">Cash Spent: ${{ n.cash_spent }}</p></div>
+		  		<div><p class="w3-large w3-center">Cash on Hand: ${{ n.cash_on_hand }}</p></div>
+		  		<div><p class="w3-large w3-center">Registrant: {{ n.registrant }}</p></div>
 		  	{% endfor %}
 		{% endif %}
 	</div>
+
+
+
 
 	<!-- PAC search by committee id -->
 	<div>
 		{% if (pac_id_data is defined) and (pac_id_data | length == 0) %}
-			<h2>No results</h2>
+			<p class="w3-large w3-center"><h2>No results</h2></p>
 		{% endif %}
 
+
+
 		{% if pac_id_data is defined %}
+	<h1 class="w3-jumbo w3-animate-top">PAC Information for: {{ n.name}}< </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
 			{% for n in pac_id_data %}
-			<h2>PAC Information for: {{ n.name}}</h2>
-		  		<div>Committee ID: {{ n.committee_id }}</div>
-		  		<div>Name: {{ n.name }}</div>
-		  		<div>Budget: ${{ n.budget }}</div>
-		  		<div>Cash Spent: ${{ n.cash_spent }}</div>
-		  		<div>Cash on Hand: ${{ n.cash_on_hand }}</div>
-		  		<div>Registrant: {{ n.registrant }}</div>
+		  		<div><p class="w3-large w3-center">Committee ID: {{ n.committee_id }}</p></div>
+		  		<div><p class="w3-large w3-center">Name: {{ n.name }}</p></div>
+		  		<div><p class="w3-large w3-center">Budget: ${{ n.budget }}</p></div>
+		  		<div><p class="w3-large w3-center">Cash Spent: ${{ n.cash_spent }}</p></div>
+		  		<div><p class="w3-large w3-center">Cash on Hand: ${{ n.cash_on_hand }}</p></div>
+		  		<div><p class="w3-large w3-center">Registrant: {{ n.registrant }}</p></div>
 		  	{% endfor %}
 		{% endif %}
 	</div>
+
+
+
+
+
+
+	<div>
+		{% if (spac_data is defined) and (spac_data | length > 0) %}
+			{% for n in spac_data %}
+
+	<h1 class="w3-jumbo w3-animate-top">Super PAC Information for: {{ n.name }}< </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
+
 
 	<!-- Super PAC search by name -->
 	<div>
 		{% if (spac_data is defined) and (spac_data | length > 0) %}
 			{% for n in spac_data %}
-			<h2>Super PAC Information for: {{ n.name }}</h2>
-		  		<div>Committee ID: {{ n.committee_id }}</div>
-		  		<div>Name: {{ n.name }}</div>
-		  		<div>Budget: {{ n.budget }}</div>
-		  		<div>Cash Spent: {{ n.cash_spent }}</div>
-		  		<div>Viewpoint: {{ n.viewpoint }}</div>
+		
+		  		<div><p class="w3-large w3-center">Committee ID: {{ n.committee_id }}</p></div>
+		  		<div><p class="w3-large w3-center">Name: {{ n.name }}</p></div>
+		  		<div><p class="w3-large w3-center">Budget: {{ n.budget }}</p></div>
+		  		<div><p class="w3-large w3-center">Cash Spent: {{ n.cash_spent }}</p></div>
+		  		<div><p class="w3-large w3-center">Viewpoint: {{ n.viewpoint }}</p></div>
 		  	{% endfor %}
 		{% endif %}
 
 		{% if (spac_data is defined) and (spac_data | length == 0) %}
-			<h2>No results</h2>
+			<p class="w3-large w3-center"><h2>No results</h2></p>
 		{% endif %}
 	</div>
+
+
+
+
+
+
+
+
+    </p>
+
+  </div>
+
+  
+</div>
+
+</body>
+</html>
+ 
+
+
+
+<div class="container container-body">
+
+
+
+
+
 
 	<!-- Legislation search by name -->
 	<div>

@@ -1,17 +1,77 @@
-<h1> This is game info of {{tname}}</h1>
+<!--<h1>alL teams you can see</h1>
+    <div>{{data}}</div>
+
+    <div>
+      {% for n in data %}
+      <div>{{n}}</div>
+      {% endfor %}
+    </div> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<title>Game display</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://www.walldevil.com/wallpapers/a75/wallpaper-background-black-basketball-basket-ball-sport-backgrounds-desktop-wallpapers.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    
+  </div>
+  
+    <h1 class="w3-jumbo w3-animate-top">Game of {{tname}} </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
+   
+    <p class="w3-large w3-center">
+    
     {% for n in gamedata %}
-    <p><a href = "/comment_more?uid={{uid}}&gameid={{n[4]}}">Click here to  comment more about this game</a></p> 
-    <p>Game Number:{{n[4]}}</p>
-    <p>Basketball Team Name:{{n[2]}}</p>
-    <p>Game Place:{{n[0]}}</p>
-    <p>Game Time:{{n[1]}}</p>
-    <p>Score of Team{{tname}}:{{n[3]}}</p>
+    <h4 class="w3-large w3-center"><a href = "/comment_more?uid={{uid}}&gameid={{n[4]}}">Comment more about this</a></h4>
+    <p class="w3-large w3-center">Game Number:{{n[4]}}</p>
+    <p class="w3-large w3-center">Basketball Team Name:{{n[2]}}</p>
+    <p class="w3-large w3-center">Game Place:{{n[0]}}</p>
+    <p class="w3-large w3-center">Game Time:{{n[1]}}</p>
+    <p class="w3-large w3-center">Score of Team{{tname}}:{{n[3]}}</p>
     {% endfor %}
+
+    <h1 class="w3-jumbo w3-animate-top">Comments of {{tname}} </h1>
+  
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
+
     {%for s in commentdata%}
-    <p>Game Number:{{s[4]}}</p>
-    <p>Your comment to this game:{{s[1]}}</p>
-    <p>Comment time:{{s[0]}}</p>
-    <p>Your rate of the game:{{s[2]}}
-    <p><a href = "/comment_update?commentid={{s[3]}}&uid={{uid}}">Click here to  update your comment about this game</a></p>
-    <p><a href = "/comment_delete?commentid={{s[3]}}&uid={{uid}}">Click here to delete this comment about this game</a></p> 
-    {% endfor %}    
+    <p class="w3-large w3-center">Game Number:{{s[4]}}</p>
+    <p class="w3-large w3-center">Your comment to this game:{{s[1]}}</p>
+    <p class="w3-large w3-center">Comment time:{{s[0]}}</p>
+    <p class="w3-large w3-center">Your rate of this game:{{s[2]}}</p>
+
+
+   
+    <hr class="w3-border-grey" style="margin:auto;width:100%">
+    <p class="w3-large w3-center"><a href = "/comment_update?commentid={{s[3]}}&uid={{uid}}">Update your comment about this game</a></p>
+    <p class="w3-large w3-center"><a href = "/comment_delete?commentid={{s[3]}}&uid={{uid}}">Delete this comment about this game</a></p> 
+    {% endfor %}  
+
+
+    </p>
+
+  </div>
+
+  
+</div>
+
+</body>
+</html>
+ 

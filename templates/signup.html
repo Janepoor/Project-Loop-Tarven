@@ -1,25 +1,56 @@
+<!DOCTYPE html>
 <html>
+<title>Sign UP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('http://wallpapercave.com/wp/WFTMul0.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+
 <body>
-{{fail_message}}
-<form method ="POST" action="/realadd">
 
-<label for="username">Input username</label>
-<input type="text" id="username" name="username"> 
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    
+  </div>
 
-<label for="password">Input password</label>
-<input type="text" id= "password" name = "password">
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">Sign Up</h1>
+     <p class="w3-large w3-center">{{fail_message}}</p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <form method ="POST" action="/realadd">
+<p class="w3-large w3-center"><label  for="username"></label><input type="text" id="username" name="username" placeholder="input your username" > </p>
+<p class="w3-large w3-center"><label  for="password"></label><input type="text" id="password" name="password" placeholder="input your password" > </p>
+<p class="w3-large w3-center"><label  for="gender"></label><input type="text" id="gender" name="gender" placeholder="Male or Female" > </p>
 
-<label for="gender">Input gender</label>
-<input type="text" id="gender" name = "gender">
+<p class="w3-large w3-center"><label  for="emailaddress"></label><input type="text" id="emailaddress" name="emailaddress" placeholder="Input emailaddress" > </p>
 
-<label for="emailaddress">Input emailaddress</label>
-<input type="text" id="emailaddress" name = "emailaddress">
+<p class="w3-large w3-center"><label  for="age"></label><input type="text" id="age" name="age" placeholder="Input age" > </p>
 
-<label for="age">Input age</label>
-<input type="text" id="age" name = "age">
 
-<input type="submit" value="submit">
+<p class="w3-large w3-center"><input type="submit" value="submit"></p>
+</div>
+ <div class="w3-display-bottomleft w3-padding-large w3-text-white">
+    Powered by <a>Yulong Qiao & Jianpu Ma</a>
+  </div>
+ 
+    </div>
+    <div>
+   
+  
 
-</form>
+
 </body>
 </html>
+
+
+
+

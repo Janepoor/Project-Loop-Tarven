@@ -1,14 +1,63 @@
-<div class="container container-body">
-  <h1> Please Choose Basketball Team</h1>
-  <hr>
+
+<!DOCTYPE html>
+<html>
+<title>General Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('http://wallpapercave.com/wp/WFTMul0.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">Choose the team</h1>
+     <p class="w3-large w3-center">Available Teams Show Below</p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+   
+
+
+ <p class="w3-large w3-center">
+
   <form method="GET" action="/teamsearched">
-  <select name ="query">
+ <p class="w3-large w3-center"><select name ="query">
   {%for p in teamdata%}
-  <option value="{{p}}"> {{p}}</option>
+ <p class="w3-large w3-center"><option value="{{p}}"> {{p}}</option></p>
   {% endfor %}
-  </select>
+  </select></p>
+
   <input type="hidden" id="uname" name = "uname" value={{uname}}>
   <input type="hidden" id="uid", name="uid" value="{{uid}}">
-  <input type="submit" value="submit">
+ <p class="w3-large w3-center"><input type="submit" value="submit"></p>
   </form>
+
+  </p>
+
+
   </div>
+
+  <div class="w3-display-bottomleft w3-padding-large w3-text-white">
+    Powered by <a>Yulong Qiao & Jianpu Ma</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
